@@ -1,0 +1,100 @@
+{
+    "nodes": [
+      {
+        "id": "1",
+        "name": "Core Router 1",
+        "type": "router",
+        "level": 0
+      },
+      {
+        "id": "2",
+        "name": "Core Router 2",
+        "type": "router",
+        "level": 0
+      },
+      {
+        "id": "3",
+        "name": "Switch 1",
+        "type": "switch",
+        "level": 1
+      },
+      {
+        "id": "4",
+        "name": "Switch 2",
+        "type": "switch",
+        "level": 1
+      },
+      {
+        "id": "5",
+        "name": "Web Server",
+        "type": "server",
+        "level": 2
+      },
+      {
+        "id": "6",
+        "name": "Database Server",
+        "type": "server",
+        "level": 2
+      },
+      {
+        "id": "7",
+        "name": "Workstation 1",
+        "type": "client",
+        "level": 3
+      },
+      {
+        "id": "8",
+        "name": "Workstation 2",
+        "type": "client",
+        "level": 3
+      },
+      {
+        "id": "9",
+        "name": "Workstation 3",
+        "type": "client",
+        "level": 3
+      }
+    ],
+    "links": [
+      {
+        "source": "1",
+        "target": "2",
+        "bandwidth": "10Gbps"
+      },
+      {
+        "source": "1",
+        "target": "3",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "2",
+        "target": "4",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "3",
+        "target": "5",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "3",
+        "target": "7",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "4",
+        "target": "6",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "4",
+        "target": "8",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "9",
+        "target": "4",
+        "bandwidth": "100Mbps"
+      }
+    ]
+  }
