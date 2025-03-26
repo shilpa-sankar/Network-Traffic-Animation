@@ -4,70 +4,75 @@
         "id": "1",
         "name": "Core Router 1",
         "type": "router",
-        "level": 0
-      },
-      {
-        "id": "2",
-        "name": "Core Router 2",
-        "type": "router",
-        "level": 0
+        "level": 0,
+        "upSpeed": 104,
+        "downSpeed": 100
       },
       {
         "id": "3",
         "name": "Switch 1",
         "type": "switch",
-        "level": 1
+        "level": 1,
+        "upSpeed": 1.00,
+        "downSpeed": 1.47
       },
       {
         "id": "4",
         "name": "Switch 2",
         "type": "switch",
-        "level": 1
+        "level": 1,
+        "upSpeed": 1.75,
+        "downSpeed": 3.73
       },
       {
         "id": "5",
         "name": "Web Server",
         "type": "server",
-        "level": 2
+        "level": 2,
+        "upSpeed": 1.03,
+        "downSpeed": 2.25
       },
       {
         "id": "6",
         "name": "Database Server",
         "type": "server",
-        "level": 2
+        "level": 2,
+        "upSpeed": 2.73,
+        "downSpeed": 788
       },
       {
         "id": "7",
         "name": "Workstation 1",
         "type": "client",
-        "level": 3
+        "level": 3,
+        "upSpeed": 431,
+        "downSpeed": 2.52
       },
       {
         "id": "8",
         "name": "Workstation 2",
         "type": "client",
-        "level": 3
+        "level": 3,
+        "upSpeed": 1.04,
+        "downSpeed": 3.30
       },
       {
         "id": "9",
         "name": "Workstation 3",
         "type": "client",
-        "level": 3
+        "level": 3,
+        "upSpeed": 920,
+        "downSpeed": 2.00
       }
     ],
     "links": [
-      {
-        "source": "1",
-        "target": "2",
-        "bandwidth": "10Gbps"
-      },
       {
         "source": "1",
         "target": "3",
         "bandwidth": "1Gbps"
       },
       {
-        "source": "2",
+        "source": "1",
         "target": "4",
         "bandwidth": "1Gbps"
       },
@@ -92,8 +97,8 @@
         "bandwidth": "100Mbps"
       },
       {
-        "source": "9",
-        "target": "4",
+        "source": "4",
+        "target": "9",
         "bandwidth": "100Mbps"
       }
     ]
