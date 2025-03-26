@@ -22,7 +22,7 @@ The **Network Traffic Animation Project** is a visualization tool built using Re
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/shilpa-sankar/Network-Traffic-Animation.git
    ```
 2. Navigate to the project directory:
    ```bash
