@@ -2,14 +2,14 @@
     "nodes": [
       {
         "id": "1",
-        "name": "Core Router 1",
+        "name": "Core Router",
         "type": "router",
         "level": 0,
         "upSpeed": 104,
         "downSpeed": 100
       },
       {
-        "id": "3",
+        "id": "2",
         "name": "Switch 1",
         "type": "switch",
         "level": 1,
@@ -17,7 +17,7 @@
         "downSpeed": 1.47
       },
       {
-        "id": "4",
+        "id": "3",
         "name": "Switch 2",
         "type": "switch",
         "level": 1,
@@ -25,8 +25,16 @@
         "downSpeed": 3.73
       },
       {
+        "id": "4",
+        "name": "Switch 3",
+        "type": "switch",
+        "level": 1,
+        "upSpeed": 2.00,
+        "downSpeed": 2.50
+      },
+      {
         "id": "5",
-        "name": "Web Server",
+        "name": "Web Server 1",
         "type": "server",
         "level": 2,
         "upSpeed": 1.03,
@@ -42,6 +50,22 @@
       },
       {
         "id": "7",
+        "name": "File Server",
+        "type": "server",
+        "level": 2,
+        "upSpeed": 1.50,
+        "downSpeed": 3.00
+      },
+      {
+        "id": "8",
+        "name": "Mail Server",
+        "type": "server",
+        "level": 2,
+        "upSpeed": 1.20,
+        "downSpeed": 2.80
+      },
+      {
+        "id": "9",
         "name": "Workstation 1",
         "type": "client",
         "level": 3,
@@ -49,7 +73,7 @@
         "downSpeed": 2.52
       },
       {
-        "id": "8",
+        "id": "10",
         "name": "Workstation 2",
         "type": "client",
         "level": 3,
@@ -57,15 +81,92 @@
         "downSpeed": 3.30
       },
       {
-        "id": "9",
+        "id": "11",
         "name": "Workstation 3",
         "type": "client",
         "level": 3,
         "upSpeed": 920,
         "downSpeed": 2.00
+      },
+      {
+        "id": "12",
+        "name": "Workstation 4",
+        "type": "client",
+        "level": 3,
+        "upSpeed": 750,
+        "downSpeed": 2.25
+      },
+      {
+        "id": "13",
+        "name": "Workstation 5",
+        "type": "client",
+        "level": 3,
+        "upSpeed": 680,
+        "downSpeed": 2.50
+      },
+      {
+        "id": "14",
+        "name": "Printer 1",
+        "type": "device",
+        "level": 3,
+        "upSpeed": 0.50,
+        "downSpeed": 1.00
+      },
+      {
+        "id": "15",
+        "name": "Printer 2",
+        "type": "device",
+        "level": 3,
+        "upSpeed": 0.75,
+        "downSpeed": 1.25
+      },
+      {
+        "id": "16",
+        "name": "Switch 4",
+        "type": "switch",
+        "level": 1,
+        "upSpeed": 1.25,
+        "downSpeed": 2.00
+      },
+      {
+        "id": "17",
+        "name": "NAS Storage",
+        "type": "storage",
+        "level": 2,
+        "upSpeed": 3.00,
+        "downSpeed": 4.00
+      },
+      {
+        "id": "18",
+        "name": "Backup Server",
+        "type": "server",
+        "level": 2,
+        "upSpeed": 2.50,
+        "downSpeed": 3.50
+      },
+      {
+        "id": "19",
+        "name": "Workstation 6",
+        "type": "client",
+        "level": 3,
+        "upSpeed": 850,
+        "downSpeed": 2.75
+      },
+      {
+        "id": "20",
+        "name": "IP Phone 1",
+        "type": "device",
+        "level": 3,
+        "upSpeed": 0.30,
+        "downSpeed": 0.50
       }
     ],
     "links": [
+      {
+        "source": "1",
+        "target": "2",
+        "bandwidth": "1Gbps"
+      },
       {
         "source": "1",
         "target": "3",
@@ -77,28 +178,83 @@
         "bandwidth": "1Gbps"
       },
       {
-        "source": "3",
+        "source": "1",
+        "target": "16",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "2",
         "target": "5",
         "bandwidth": "1Gbps"
       },
       {
+        "source": "2",
+        "target": "9",
+        "bandwidth": "100Mbps"
+      },
+      {
         "source": "3",
-        "target": "7",
+        "target": "6",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "3",
+        "target": "10",
         "bandwidth": "100Mbps"
       },
       {
         "source": "4",
-        "target": "6",
+        "target": "7",
         "bandwidth": "1Gbps"
       },
       {
         "source": "4",
         "target": "8",
-        "bandwidth": "100Mbps"
+        "bandwidth": "1Gbps"
       },
       {
         "source": "4",
-        "target": "9",
+        "target": "11",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "5",
+        "target": "12",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "7",
+        "target": "13",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "8",
+        "target": "14",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "16",
+        "target": "17",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "16",
+        "target": "18",
+        "bandwidth": "1Gbps"
+      },
+      {
+        "source": "17",
+        "target": "19",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "18",
+        "target": "20",
+        "bandwidth": "100Mbps"
+      },
+      {
+        "source": "6",
+        "target": "15",
         "bandwidth": "100Mbps"
       }
     ]

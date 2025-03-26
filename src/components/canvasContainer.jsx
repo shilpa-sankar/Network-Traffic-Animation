@@ -22,14 +22,14 @@ class StaticSphereHierarchy extends Component {
   constructor(props) {
     super(props);
     this.scene = new THREE.Scene();
-    this.camera = new THREE.OrthographicCamera(-60, 60, 40, -40, 1, 1000 );
+    this.camera = new THREE.OrthographicCamera(-70, 70, 55, -55, 1, 1000 );
     this.camera.position.set(0, 0, 5);
     this.camera.lookAt(0, 0, 0);
     console.log('this.camera : ', this.camera );
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.parentSphere = null;
 
-    this.viewMode = HORIZONTALMODE;
+    this.viewMode = VERTICALMODE;
 
     this.layer = 3;
     // nodeData and linkData are the data which is coming from the props
@@ -117,38 +117,39 @@ class StaticSphereHierarchy extends Component {
       //set position
       this.nodeMap.forEach((value, key) => {
         let length = value.length;
-        const secondarOffset = 20 / length * key;
+        const secondarOffset = 30 / length * key;
+        const primaryOffset = 10;
         for (let i = 0; i < length; i++) {
           if (this.viewMode === VERTICALMODE) {
             // primary axis 
             console.log('value[i]: ', value[i]);
-            value[i].position.y = 20 - key * 10;
-            value[i].sphere.position.y = 20 - key * 10;
-            value[i].text1.position.y = 20 - key * 10 + 1.2;
-            value[i].text.position.y = 20 - key * 10 + 3;
-            value[i].image.position.y = 20 - key * 10 + 5;
+            value[i].position.y = 20 - key * primaryOffset;
+            value[i].sphere.position.y = 20 - key * primaryOffset;
+            value[i].text1.position.y = 20 - key * primaryOffset + 1.2;
+            value[i].text.position.y = 20 - key * primaryOffset + 3;
+            if (value[i].image) value[i].image.position.y = 20 - key * primaryOffset + 5;
   
             //secondary axis
             value[i].position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
             value[i].sphere.position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
             value[i].text.position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
             value[i].text1.position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
-            value[i].image.position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
+            if (value[i].image) value[i].image.position.x = i * secondarOffset - (length - 1) * secondarOffset/2;
           }
           else if (this.viewMode === HORIZONTALMODE) {
             // primary axis 
-            value[i].position.x = - 10 + key * 10;
-            value[i].sphere.position.x = - 10 + key * 10;
-            value[i].text1.position.x = - 10 + key * 10 - 1.2;
-            value[i].text.position.x = - 10 + key * 10 - 3;
-            value[i].image.position.x = - 10 + key * 10 - 8;
+            value[i].position.x = - 10 + key * primaryOffset;
+            value[i].sphere.position.x = - 10 + key * primaryOffset;
+            value[i].text1.position.x = - 10 + key * primaryOffset - 1.2;
+            value[i].text.position.x = - 10 + key * primaryOffset - 3;
+            if (value[i].image) value[i].image.position.x = - 10 + key * primaryOffset - 8;
   
             //secondary axis
             value[i].position.y = i * secondarOffset - (length - 1) * secondarOffset/2;
             value[i].sphere.position.y = i * secondarOffset - (length - 1) * secondarOffset/2;
             value[i].text1.position.y = i * secondarOffset - (length - 1) * secondarOffset/2 - 1.2;
             value[i].text.position.y = i * secondarOffset - (length - 1) * secondarOffset/2 - 3;
-            value[i].image.position.y = i * secondarOffset - (length - 1) * secondarOffset/2 - 2;
+            if (value[i].image) value[i].image.position.y = i * secondarOffset - (length - 1) * secondarOffset/2 - 2;
           }
         this.nodes.push(value[i]);
         }

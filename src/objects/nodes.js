@@ -56,6 +56,9 @@ export default class Node {
 
     // creating image sprite
     createImageSprite() {
+        if (this.id !== '1') {
+            return null;
+        }
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('http://localhost:5173/router.png');
         const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
