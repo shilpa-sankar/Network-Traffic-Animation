@@ -60,7 +60,7 @@ export default class Node {
             return null;
         }
         const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load('http://localhost:5173/router.png');
+        const texture = textureLoader.load('https://network-traffic-animation-y4iz.vercel.app/router.png');
         const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
         const sprite = new THREE.Sprite(spriteMaterial);
         sprite.scale.set(2, 2, 2);

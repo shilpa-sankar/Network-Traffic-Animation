@@ -25,7 +25,7 @@ function App() {
      * The setGraphData() method is used to update the state of the graph data
      * The setLoading() method is used to update the loading state of the graph data
      */
-    fetch('http://localhost:5173/nodeDataJSON.json')
+    fetch('https://network-traffic-animation-y4iz.vercel.app/nodeDataJSON.json')
       .then(response => response.json())
       .then(data => {
         setGraphData({ nodes: data.nodes, links: data.links });
